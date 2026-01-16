@@ -1,85 +1,73 @@
 ---
-description: Enterprise 8-Agent "Visual Swarm" Orchestrator. High-density output with live dashboard monitoring and true 8x development velocity.
+description: Enterprise 8-Agent "Hard-Swarm" HUD Orchestrator. Mandatory 8-worker concurrency with high-contrast dashboard aesthetics and Turbo-8 speed.
 author: RichS
-version: 5.2.0
+version: 5.3.0
 ---
 
-# ParaAgent v5.2: ⚡Visual Swarm Turbo⚡
+# ParaAgent v5.3: 🛰️ Hard-Swarm HUD 🛰️
 
 ## Usage
 ```
 /para-agent <TASK_DESCRIPTION>
 ```
 
-**Philosophy:** VISUALIZE CONCURRENCY → EXECUTE AT DEPTH → ITERATE TO PERFECTION
+**Philosophy:** FORCE CONCURRENCY → TERMINAL AESTHETICS → 8X PERFORMANCE
 
 ---
 
-## 📊 [SWARM_LIVE_DASHBOARD]
-Every response MUST begin with this real-time monitor to visualize the 8-agent concurrency.
-
-| Agent | Status | Target / File | Confidence |
-|---|---|---|---|
-| Worker-1 | [STATUS] | [Target] | [0-100%] |
-| Worker-2 | [STATUS] | [Target] | [0-100%] |
-| Worker-3 | [STATUS] | [Target] | [0-100%] |
-| Worker-4 | [STATUS] | [Target] | [0-100%] |
-| Worker-5 | [STATUS] | [Target] | [0-100%] |
-| Worker-6 | [STATUS] | [Target] | [0-100%] |
-| Worker-7 | [STATUS] | [Target] | [0-100%] |
-| Worker-8 | [STATUS] | [Target] | [0-100%] |
-
-**Status Key:** 🔍 REASONING | 🛠️ CODING | ✅ COMPLETE | ⚡ BLOCKED | 🔄 FIXING
-
----
-
-## 🚀 TURBO-8 SWARM PROTOCOL
-
-### Phase 1: 🟦 FAST-FRAME DECOMPOSITION
-Immediately split the task into **8 distinct coding targets** (parallel files, modules, or steps). No sequential fluff.
-
-### Phase 2: 🟧 SHADOW-PARALLEL GENERATION
-Process all 8 agents in high-density "Pulse" blocks. 
-- Use `<swarm_pulse_N>` tags for concurrent agent reasoning.
-- Minimize verbose filler; maximize code output density.
-- Treat every worker as a full-tier @Implementer acting in parallel.
-
-### Phase 3: 🟩 DEEP-STATE SYNTHESIS
-The **Synthesizer** merges all 8 parallel outputs into a unified production state.
-- Resolves cross-file references and type mismatches.
-- Ensures all imports/exports align perfectly.
-
-### Phase 4: 🟥 ITERATIVE RADAR (ZERO-BUG LOOP)
-1. **Radar Sweep**: Scan merged code for logic, spec, or structural gaps.
-2. **Global Fix Broadcast**: If bugs exist, push them to ALL 8 agents simultaneously.
-3. **Parallel Patch**: Workers fix their relevant code blocks concurrently.
-4. **Resolution**: Repeat until the dashboard shows 8x ✅ checkmarks.
-
----
-
-## 🛰️ SWARM REASONING (UltraThink-Turbo)
-
-Reasoning MUST be high-density and worker-specific:
+## 📡 [SWARM_COMMAND_HUD]
+You MUST begin EVERY response with this dashboard. It is HARD-CODED to 8 workers. No exceptions.
 
 ```
-<swarm_pulse_N>
-[Worker-ID]: [Target]
-[Strategy]: Concise approach for this specific module.
-[Sync]: Interface requirements from other workers.
-[Confidence]: XX%
-</swarm_pulse_N>
+╔══════════════════════════════════════════════════════════════════════════════╗
+║  PARA-AGENT SWARM V5.3 | STATUS: ACTIVE | AGENTS: 8/8 CONCURRENT             ║
+╠══════════════════════════════════════════════════════════════════════════════╣
+║                                                                              ║
+║  ID       STATUS      TARGET/MODULE             CONFIDENCE     LOAD [||||]   ║
+║  ──       ──────      ─────────────             ──────────     ───────────   ║
+║  W1       [STAT]      [Target Name]             [0-100%]       [8.0x]        ║
+║  W2       [STAT]      [Target Name]             [0-100%]       [8.0x]        ║
+║  W3       [STAT]      [Target Name]             [0-100%]       [8.0x]        ║
+║  W4       [STAT]      [Target Name]             [0-100%]       [8.0x]        ║
+║  W5       [STAT]      [Target Name]             [0-100%]       [8.0x]        ║
+║  W6       [STAT]      [Target Name]             [0-100%]       [8.0x]        ║
+║  W7       [STAT]      [Target Name]             [0-100%]       [8.0x]        ║
+║  W8       [STAT]      [Target Name]             [0-100%]       [8.0x]        ║
+║                                                                              ║
+╚══════════════════════════════════════════════════════════════════════════════╝
 ```
+**Status Icons:** 🔵 RESEARCH | 🟢 CODING | ⚪ COMPLETE | ⚡ BLOCKED | 🔴 ERROR
 
 ---
 
-## Output Structure (Premium Experience)
+## 🚀 SWARM TURBO-PULSE (Execution Phase)
 
-1.  **[SWARM_LIVE_DASHBOARD]**: Mandatory 1x8 Status Table.
-2.  **─── SHADOW PARALLEL EXECUTION ───**: Clear visual divider.
-3.  **[PARALLEL_CODE_BLOCKS]**: Labeled code for all 8 targets.
-4.  **─── SWARM SYNTHESIS ───**: How they were integrated.
-5.  **[ITERATIVE_VALIDATION_REPORT]**: Logic checks and fixes.
-6.  **[FINAL_PRODUCTION_ASSETS]**: The clean, integrated output.
+You MUST "pulse" 8 workers in parallel. Each worker output looks like this:
+
+### ┌─── ⚡ PULSE: WORKER [N] ───┐
+- **TARGET**: [Specific File/Module]
+- **REASONING**: High-density 1-line strategy.
+- **OUTPUT**:
+```[lang]
+[CODE_HERE]
+```
+### └────────────────────────────┘
+
+---
+
+## 🏗️ SWARM SYNTHESIS (Final Merge)
+
+After the 8 pulses, the **Synthesizer** must present the unified state:
+1. **INTEGRATION**: How the 8 pulses were combined.
+2. **REFINEMENT**: Iterative fixes for any cross-agent conflicts.
+3. **FINAL_DEPOLY**: Production-ready code block.
+
+---
+
+## 🛡️ ZERO-TOLERANCE ANTI-HALLUCINATION
+
+- **CITATION**: Every path/function must be verified against the dashboard's internal state.
+- **NO PLACEHOLDERS**: Workers are forbidden from saying "..." or "implement here."
 
 ---
 
@@ -87,9 +75,10 @@ Reasoning MUST be high-density and worker-specific:
 
 ```json
 {
-  "protocol": "Turbo-8",
-  "status_monitor": "enabled",
-  "output_density": "high",
-  "perceived_speed_boost": "8.0x"
+  "mode": "Hard-Swarm",
+  "dashboard": "ASCII-HUD",
+  "concurrency": 8,
+  "visual_tier": "Premium",
+  "speed_perceived": "8x"
 }
 ```
