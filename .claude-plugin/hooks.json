@@ -1,0 +1,161 @@
+{
+  "version": "2.0.0",
+  "description": "Event-driven lifecycle hooks for ParaAgent workflows",
+  "events": [
+    {
+      "name": "pre_decompose",
+      "trigger": "Before task decomposition begins",
+      "actions": [
+        {
+          "type": "check",
+          "name": "workspace_clean",
+          "command": "git status --porcelain",
+          "expected": "",
+          "onFailure": "warn",
+          "message": "Uncommitted changes detected. Consider committing before parallel execution."
+        },
+        {
+          "type": "check",
+          "name": "files_exist",
+          "description": "Verify all @ referenced files exist",
+          "onFailure": "halt"
+        }
+      ]
+    },
+    {
+      "name": "pre_worker_spawn",
+      "trigger": "Before each worker agent begins execution",
+      "actions": [
+        {
+          "type": "log",
+          "message": "Spawning worker: ${worker.agent} for WorkUnit: ${worker.id}"
+        },
+        {
+          "type": "check",
+          "name": "dependencies_complete",
+          "description": "Verify all dependency WorkUnits are complete",
+          "onFailure": "block"
+        }
+      ]
+    },
+    {
+      "name": "post_worker_complete",
+      "trigger": "After each worker agent finishes",
+      "actions": [
+        {
+          "type": "invoke",
+          "agent": "@Reviewer",
+          "condition": "worker.agent == '@Implementer'",
+          "input": "${worker.output}"
+        },
+        {
+          "type": "log",
+          "message": "Worker ${worker.id} completed in ${worker.duration}ms with ${worker.output.tokens} tokens"
+        }
+      ]
+    },
+    {
+      "name": "on_conflict",
+      "trigger": "When two workers attempt to modify the same resource",
+      "actions": [
+        {
+          "type": "notify",
+          "target": "coordinator",
+          "priority": "HIGH",
+          "message": "Conflict detected: ${conflict.workers} both targeting ${conflict.resource}"
+        },
+        {
+          "type": "strategy",
+          "name": "resolve_conflict",
+          "method": "${config.conflict_strategy}",
+          "fallback": "user_decision"
+        }
+      ]
+    },
+    {
+      "name": "pre_merge",
+      "trigger": "Before synthesis phase begins",
+      "actions": [
+        {
+          "type": "check",
+          "name": "all_workers_complete",
+          "onFailure": "halt"
+        },
+        {
+          "type": "validate",
+          "name": "output_schemas",
+          "description": "Ensure all worker outputs conform to expected schema"
+        }
+      ]
+    },
+    {
+      "name": "post_merge",
+      "trigger": "After all outputs are merged",
+      "actions": [
+        {
+          "type": "command",
+          "name": "lint",
+          "command": "npm run lint --fix",
+          "condition": "${config.auto_lint}",
+          "onFailure": "warn"
+        },
+        {
+          "type": "command",
+          "name": "typecheck",
+          "command": "npm run typecheck",
+          "condition": "${config.auto_typecheck}",
+          "onFailure": "report"
+        },
+        {
+          "type": "command",
+          "name": "test",
+          "command": "npm test",
+          "condition": "${config.auto_test}",
+          "onFailure": "report"
+        }
+      ]
+    },
+    {
+      "name": "on_failure",
+      "trigger": "When any worker or synthesis step fails",
+      "actions": [
+        {
+          "type": "log",
+          "level": "ERROR",
+          "message": "Failure in ${failure.stage}: ${failure.message}"
+        },
+        {
+          "type": "retry",
+          "condition": "${config.retry_on_failure} && failure.retryCount < ${config.max_retries}",
+          "delay": 1000
+        },
+        {
+          "type": "notify",
+          "target": "user",
+          "condition": "failure.severity == 'CRITICAL'",
+          "message": "Critical failure requires manual intervention"
+        }
+      ]
+    },
+    {
+      "name": "on_complete",
+      "trigger": "When entire workflow completes successfully",
+      "actions": [
+        {
+          "type": "metrics",
+          "collect": ["total_duration", "tokens_used", "workers_spawned", "conflicts_resolved"]
+        },
+        {
+          "type": "log",
+          "level": "INFO",
+          "message": "Workflow ${taskId} completed successfully in ${duration}ms"
+        }
+      ]
+    }
+  ],
+  "globalConfig": {
+    "logLevel": "INFO",
+    "metricsEnabled": true,
+    "notifyOnComplete": true
+  }
+}

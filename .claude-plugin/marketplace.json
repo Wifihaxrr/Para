@@ -1,0 +1,21 @@
+{
+  "name": "Wifihaxrr-Marketplace",
+  "owner": {
+    "name": "Wifihaxrr"
+  },
+  "metadata": {
+    "description": "Official marketplace for Wifihaxrr plugins",
+    "version": "1.0.0"
+  },
+  "plugins": [
+    {
+      "name": "ParaAgent",
+      "source": "./",
+      "description": "Enterprise 10-Agent UltraThink Orchestrator with mandatory deep reasoning.",
+      "version": "5.0.0",
+      "author": { "name": "RichS" },
+      "homepage": "https://github.com/Wifihaxrr/Para",
+      "keywords": ["agents", "parallel", "orchestration", "ultrathink"]
+    }
+  ]
+}
