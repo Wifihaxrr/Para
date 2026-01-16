@@ -13,5 +13,5 @@
     "spec-driven",
     "sdd"
   ],
-  "commands": "../commands/"
+  "commands": "./commands/"
 }
