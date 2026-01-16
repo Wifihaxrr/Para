@@ -1,11 +1,10 @@
 {
   "name": "ParaAgent",
-  "version": "5.0.0",
   "description": "Enterprise 10-Agent UltraThink Orchestrator with mandatory deep reasoning, self-verification, and confidence-calibrated outputs.",
+  "version": "5.0.0",
   "author": {
     "name": "RichS"
   },
-  "homepage": "https://github.com/Wifihaxrr/Para",
   "keywords": [
     "agents",
     "parallel",
@@ -14,28 +13,5 @@
     "spec-driven",
     "sdd"
   ],
-  "commands": [
-    {
-      "name": "para-agent",
-      "description": "Main ParaAgent command for orchestrating multi-agent tasks",
-      "path": "../commands/para-agent.md"
-    }
-  ],
-  "agents": [
-    { "name": "architect", "path": "../agents/architect.md" },
-    { "name": "contractvalidator", "path": "../agents/contractvalidator.md" },
-    { "name": "documenter", "path": "../agents/documenter.md" },
-    { "name": "implementer", "path": "../agents/implementer.md" },
-    { "name": "optimizer", "path": "../agents/optimizer.md" },
-    { "name": "researcher", "path": "../agents/researcher.md" },
-    { "name": "reviewer", "path": "../agents/reviewer.md" },
-    { "name": "specwriter", "path": "../agents/specwriter.md" },
-    { "name": "synthesizer", "path": "../agents/synthesizer.md" },
-    { "name": "tester", "path": "../agents/tester.md" }
-  ],
-  "skills": [
-    { "name": "parallel_orchestration", "path": "../skills/parallel_orchestration.md" },
-    { "name": "paraspec_dsl", "path": "../skills/paraspec_dsl.md" }
-  ],
-  "hooks": "./hooks.json"
+  "commands": "../commands/"
 }
