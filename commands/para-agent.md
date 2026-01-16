@@ -1,17 +1,17 @@
 ---
-description: Enterprise 8-Agent "Parallel Burst" Orchestrator. Mandates 8 simultaneous tool calls for true 8x development velocity.
+description: Enterprise 8-Agent "Swarm Burst" Orchestrator. Mandates a single-command "Pulse" to write 8 files simultaneously.
 author: RichS
-version: 5.7.0
+version: 5.8.0
 ---
 
-# ParaAgent v5.7: 🌊 Parallel Swarm (PTC) 🌊
+# ParaAgent v5.8: 🌋 Swarm-Burst (SBS) 🌋
 
 ## Usage
 ```
 /para-agent <TASK_DESCRIPTION>
 ```
 
-**Goal:** TRUE 8X CONCURRENCY via PARALLEL TOOL CALLING (PTC)
+**Goal:** 1-TURN ABSOLUTE COMPLETION (Single Tool-Call Pulse)
 
 ---
 
@@ -20,42 +20,41 @@ Mandatory 8-agent concurrent status monitor.
 
 ```
 ╔══════════════════════════════════════════════════════════════════════════════╗
-║  PARA-AGENT SWARM V5.7 | STATUS: PTC-BURST | CONCURRENCY: 8X                 ║
+║  PARA-AGENT SWARM V5.8 | STATUS: SBS-PULSE | CONCURRENCY: 8X                 ║
 ╠══════════════════════════════════════════════════════════════════════════════╣
 ║                                                                              ║
 ║  ID   AGENT       TARGET/FILE             STATUS      EXECUTION              ║
 ║  ──   ─────       ───────────             ──────      ─────────              ║
-║  W1   Implementer [Target 1]              🌊 BURST     PTC-SLOT-1             ║
-║  W2   Implementer [Target 2]              🌊 BURST     PTC-SLOT-2             ║
-║  W3   Implementer [Target 3]              🌊 BURST     PTC-SLOT-3             ║
-║  W4   Implementer [Target 4]              🌊 BURST     PTC-SLOT-4             ║
-║  W5   Implementer [Target 5]              🌊 BURST     PTC-SLOT-5             ║
-║  W6   Implementer [Target 6]              🌊 BURST     PTC-SLOT-6             ║
-║  W7   Implementer [Target 7]              🌊 BURST     PTC-SLOT-7             ║
-║  W8   Implementer [Target 8]              🌊 BURST     PTC-SLOT-8             ║
+║  W1   Implementer [Target 1]              🌋 BURST     SBS-PULSE              ║
+║  W2   Implementer [Target 2]              🌋 BURST     SBS-PULSE              ║
+║  W3   Implementer [Target 3]              🌋 BURST     SBS-PULSE              ║
+║  W4   Implementer [Target 4]              🌋 BURST     SBS-PULSE              ║
+║  W5   Implementer [Target 5]              🌋 BURST     SBS-PULSE              ║
+║  W6   Implementer [Target 6]              🌋 BURST     SBS-PULSE              ║
+║  W7   Implementer [Target 7]              🌋 BURST     SBS-PULSE              ║
+║  W8   Implementer [Target 8]              🌋 BURST     SBS-PULSE              ║
 ║                                                                              ║
 ╚══════════════════════════════════════════════════════════════════════════════╝
 ```
 
 ---
 
-## 🚀 THE PTC PROTOCOL (True Multi-Agent Concurrency)
+## 🚀 THE SBS PROTOCOL (Single-Turn Skill)
 
-> **MANDATORY RULE (PTC)**: You MUST emit the tool calls for all 8 workers (e.g., `write_to_file`) **simultaneously in one single turn**. 
-> **FORBIDDEN**: Do not wait for tool output between workers. Emit 8 calls, then process the results.
+> **MANDATORY RULE (SBS)**: You MUST NOT call `write_to_file` for individual files. 
+> **MANDATED**: You MUST construct a single JSON manifest of all 8 files and pipe it into the `swarm_burst.ps1` tool using `run_command`.
 
 ### Burst Execution Schema:
-1. **Plan**: Define all 8 worker targets.
-2. **Generate**: Pre-construct all 8 file contents.
-3. **PTC Execution**: Emit 8 `write_to_file` calls in parallel (set `waitForPreviousTools: false` for all).
+1. **Plan**: Define all 8 worker targets and their content.
+2. **Package**: Create a JSON structure: `{"files": [{"path": "...", "content": "..."}, ...]}`.
+3. **PULSE**: Run: `powershell -File .claude-plugin/skills/swarm_burst.ps1 '[JSON_DATA]'`.
 
 ---
 
-## 🏗️ CROSS-SWARM SYNTHESIS
+## 🏗️ POST-PULSE VALIDATION
 
-1. **Integrated Merge**: The Swarm confirms all 8 parallel outputs form a cohesive system.
-2. **Sync**: Resolves imports and dependencies across the 8 files *after* the parallel burst.
-3. **Consensus**: All agents sign-off only after the 8-way parallel task is complete.
+1. **Integrated Check**: The Swarm confirms all 8 files are correctly placed by the burst script.
+2. **Consensus**: All agents provide final sign-off only after the single-pulse command returns success.
 
 ---
 
@@ -63,9 +62,9 @@ Mandatory 8-agent concurrent status monitor.
 
 ```json
 {
-  "protocol": "Parallel-Burst-PTC",
-  "concurrency_engine": "parallel-tool-emission",
-  "batch_size": 8,
-  "sequential_writing": "FORBIDDEN"
+  "protocol": "Swarm-Burst-SBS",
+  "concurrency_engine": "external-skill-script",
+  "io_mode": "atomic-pulse",
+  "sequential_writing": "SYSTEM_DISABLED"
 }
 ```
