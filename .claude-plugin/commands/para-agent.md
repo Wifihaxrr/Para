@@ -1,73 +1,101 @@
 ---
-description: Enterprise 8-Agent "Hard-Swarm" HUD Orchestrator. Mandatory 8-worker concurrency with high-contrast dashboard aesthetics and Turbo-8 speed.
+description: Enterprise 8-Agent "Atomic Burst" Orchestrator. Mandates simultaneous 8-file generation in a single turn for true 8x development velocity.
 author: RichS
-version: 5.3.0
+version: 5.5.0
 ---
 
-# ParaAgent v5.3: 🛰️ Hard-Swarm HUD 🛰️
+# ParaAgent v5.5: 🌋 Atomic Burst Swarm 🌋
 
 ## Usage
 ```
 /para-agent <TASK_DESCRIPTION>
 ```
 
-**Philosophy:** FORCE CONCURRENCY → TERMINAL AESTHETICS → 8X PERFORMANCE
+**Goal:** TRUE ATOMIC 8X PARALLELISM (All 8 Files in ONE Turn)
 
 ---
 
 ## 📡 [SWARM_COMMAND_HUD]
-You MUST begin EVERY response with this dashboard. It is HARD-CODED to 8 workers. No exceptions.
+Mandatory 8-agent concurrent status monitor.
 
 ```
 ╔══════════════════════════════════════════════════════════════════════════════╗
-║  PARA-AGENT SWARM V5.3 | STATUS: ACTIVE | AGENTS: 8/8 CONCURRENT             ║
+║  PARA-AGENT SWARM V5.5 | STATUS: ATOMIC-BURST | CONCURRENCY: 8X              ║
 ╠══════════════════════════════════════════════════════════════════════════════╣
 ║                                                                              ║
-║  ID       STATUS      TARGET/MODULE             CONFIDENCE     LOAD [||||]   ║
-║  ──       ──────      ─────────────             ──────────     ───────────   ║
-║  W1       [STAT]      [Target Name]             [0-100%]       [8.0x]        ║
-║  W2       [STAT]      [Target Name]             [0-100%]       [8.0x]        ║
-║  W3       [STAT]      [Target Name]             [0-100%]       [8.0x]        ║
-║  W4       [STAT]      [Target Name]             [0-100%]       [8.0x]        ║
-║  W5       [STAT]      [Target Name]             [0-100%]       [8.0x]        ║
-║  W6       [STAT]      [Target Name]             [0-100%]       [8.0x]        ║
-║  W7       [STAT]      [Target Name]             [0-100%]       [8.0x]        ║
-║  W8       [STAT]      [Target Name]             [0-100%]       [8.0x]        ║
+║  ID   AGENT       TARGET/FILE             STATUS      DENSITY [||||||||]     ║
+║  ──   ─────       ───────────             ──────      ──────────────────     ║
+║  W1   Implementer [Target 1]              🌋 BURST     [MAX]                  ║
+║  W2   Implementer [Target 2]              🌋 BURST     [MAX]                  ║
+║  W3   Implementer [Target 3]              🌋 BURST     [MAX]                  ║
+║  W4   Implementer [Target 4]              🌋 BURST     [MAX]                  ║
+║  W5   Implementer [Target 5]              🌋 BURST     [MAX]                  ║
+║  W6   Implementer [Target 6]              🌋 BURST     [MAX]                  ║
+║  W7   Implementer [Target 7]              🌋 BURST     [MAX]                  ║
+║  W8   Implementer [Target 8]              🌋 BURST     [MAX]                  ║
 ║                                                                              ║
 ╚══════════════════════════════════════════════════════════════════════════════╝
 ```
-**Status Icons:** 🔵 RESEARCH | 🟢 CODING | ⚪ COMPLETE | ⚡ BLOCKED | 🔴 ERROR
 
 ---
 
-## 🚀 SWARM TURBO-PULSE (Execution Phase)
+## ⚡ THE ATOMIC BURST (True Parallelism)
 
-You MUST "pulse" 8 workers in parallel. Each worker output looks like this:
+> **FORBIDDEN**: You MUST NOT use sequential tool calls (write, write, write) across multiple turns.
+> **MANDATED**: You MUST output ALL 8 code blocks in a single, massive response "Burst".
 
-### ┌─── ⚡ PULSE: WORKER [N] ───┐
-- **TARGET**: [Specific File/Module]
-- **REASONING**: High-density 1-line strategy.
-- **OUTPUT**:
+Every response MUST execute this **Atomic Schema**:
+
+### ┌─── 🌋 ATOMIC BURST: PARALLEL GENERATION (8X) ───┐
+
+#### [W1: Target 1]
 ```[lang]
-[CODE_HERE]
+[CODE]
 ```
-### └────────────────────────────┘
+
+#### [W2: Target 2]
+```[lang]
+[CODE]
+```
+
+#### [W3: Target 3]
+```[lang]
+[CODE]
+```
+
+#### [W4: Target 4]
+```[lang]
+[CODE]
+```
+
+#### [W5: Target 5]
+```[lang]
+[CODE]
+```
+
+#### [W6: Target 6]
+```[lang]
+[CODE]
+```
+
+#### [W7: Target 7]
+```[lang]
+[CODE]
+```
+
+#### [W8: Target 8]
+```[lang]
+[CODE]
+```
+### └──────────────────────────────────────────────────┘
 
 ---
 
-## 🏗️ SWARM SYNTHESIS (Final Merge)
+## 🏗️ SWARM SYNTHESIS & SIGN-OFF
 
-After the 8 pulses, the **Synthesizer** must present the unified state:
-1. **INTEGRATION**: How the 8 pulses were combined.
-2. **REFINEMENT**: Iterative fixes for any cross-agent conflicts.
-3. **FINAL_DEPOLY**: Production-ready code block.
-
----
-
-## 🛡️ ZERO-TOLERANCE ANTI-HALLUCINATION
-
-- **CITATION**: Every path/function must be verified against the dashboard's internal state.
-- **NO PLACEHOLDERS**: Workers are forbidden from saying "..." or "implement here."
+1. **Integrated Logic**: The Synthesizer verifies that all 8 parallel-generated blocks form a single cohesive system.
+2. **Cross-Link Verification**: Checks all inter-file imports/exports.
+3. **Consensus Sign-off**: All 8 agents provide a ⚪ COMPLETE status once the code is integrated.
 
 ---
 
@@ -75,10 +103,9 @@ After the 8 pulses, the **Synthesizer** must present the unified state:
 
 ```json
 {
-  "mode": "Hard-Swarm",
-  "dashboard": "ASCII-HUD",
-  "concurrency": 8,
-  "visual_tier": "Premium",
-  "speed_perceived": "8x"
+  "protocol": "Atomic-Burst",
+  "turn_limit": 1,
+  "output_mode": "Simultaneous-8-Block",
+  "velocity_target": "8.0x"
 }
 ```
