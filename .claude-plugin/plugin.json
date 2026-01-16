@@ -1,0 +1,21 @@
+{
+    "name": "ParaAgent",
+    "version": "1.0.0",
+    "description": "Orchestrates parallel multi-agent coding workflows for high-concurrency tasks.",
+    "author": "Antigravity",
+    "components": {
+        "commands": [{
+            "name": "para-agent",
+            "path": "commands/para-agent.md"
+        }],
+        "skills": [{
+            "name": "ParallelOrchestration",
+            "path": "skills/parallel_orchestration.md"
+        }]
+    },
+    "permissions": [
+        "file_read",
+        "file_write",
+        "run_command"
+    ]
+}
