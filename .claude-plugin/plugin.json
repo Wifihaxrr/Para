@@ -1,88 +1,21 @@
 {
   "name": "ParaAgent",
   "version": "5.0.0",
-  "description": "Enterprise 10-Agent UltraThink Orchestrator with mandatory deep reasoning, self-verification, confidence scoring, and anti-hallucination guards. The most rigorous multi-agent coding system.",
-  "author": "RichS",
-  "license": "MIT",
-  "repository": "https://github.com/RichS/ParaAgent",
-  "philosophy": "ULTRATHINK → SPEC → TEST → IMPLEMENT → VERIFY → VALIDATE",
-  "config": {
-    "max_parallel_workers": 10,
-    "ultrathink": {
-      "enabled": true,
-      "mandatory": true,
-      "min_fields_required": 7,
-      "description": "Forces explicit reasoning before every action"
-    },
-    "preflight_check": {
-      "enabled": true,
-      "mandatory": true,
-      "min_items_checked": 10,
-      "description": "Validates output before returning"
-    },
-    "confidence_scoring": {
-      "enabled": true,
-      "require_justification": true,
-      "escalate_below": 60,
-      "description": "Every output includes confidence %"
-    },
-    "anti_hallucination": {
-      "enabled": true,
-      "require_citations": true,
-      "unknown_acknowledgment": true,
-      "description": "Prevents inventing facts"
-    },
-    "self_reflection": {
-      "enabled": true,
-      "mandatory": true,
-      "description": "Post-output self-questioning"
-    },
-    "sdd": {
-      "enabled": true,
-      "spec_first": true,
-      "contract_validation": "strict"
-    },
-    "deep_thinking": {
-      "enabled": true,
-      "verbosity": "FULL"
-    },
-    "auto_lint": true,
-    "auto_typecheck": true,
-    "auto_test": true
+  "description": "Enterprise 10-Agent UltraThink Orchestrator with mandatory deep reasoning, self-verification, and confidence-calibrated outputs.",
+  "author": {
+    "name": "RichS"
   },
-  "components": {
-    "commands": [
-      {
-        "name": "para-agent",
-        "path": "commands/para-agent.md",
-        "version": "5.0.0",
-        "description": "UltraThink 10-agent orchestrator"
-      }
-    ],
-    "skills": [
-      {
-        "name": "ParallelOrchestration",
-        "path": "skills/parallel_orchestration.md"
-      },
-      {
-        "name": "ParaSpecDSL",
-        "path": "skills/paraspec_dsl.md"
-      }
-    ],
-    "agents": [
-      {"name": "Researcher", "path": "agents/researcher.md", "version": "2.0.0"},
-      {"name": "SpecWriter", "path": "agents/specwriter.md", "version": "2.0.0"},
-      {"name": "Architect", "path": "agents/architect.md", "version": "2.0.0"},
-      {"name": "Tester", "path": "agents/tester.md", "version": "2.0.0"},
-      {"name": "Implementer", "path": "agents/implementer.md", "version": "2.0.0"},
-      {"name": "Reviewer", "path": "agents/reviewer.md", "version": "2.0.0"},
-      {"name": "Optimizer", "path": "agents/optimizer.md", "version": "2.0.0"},
-      {"name": "ContractValidator", "path": "agents/contractvalidator.md", "version": "2.0.0"},
-      {"name": "Documenter", "path": "agents/documenter.md", "version": "2.0.0"},
-      {"name": "Synthesizer", "path": "agents/synthesizer.md", "version": "2.0.0"}
-    ],
-    "hooks": {"path": ".claude-plugin/hooks.json"}
-  },
-  "permissions": ["file_read", "file_write", "run_command"],
-  "keywords": ["ultrathink", "deep-reasoning", "anti-hallucination", "confidence-calibrated", "spec-driven", "10-agents", "self-verification"]
+  "homepage": "https://github.com/Wifihaxrr/Para",
+  "keywords": [
+    "agents",
+    "parallel",
+    "orchestration",
+    "ultrathink",
+    "spec-driven",
+    "sdd"
+  ],
+  "commands": "../commands/",
+  "agents": "../agents/",
+  "skills": "../skills/",
+  "hooks": "./hooks.json"
 }
